@@ -1,32 +1,3 @@
-<!--
-
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/AlBFWSQg)
-# a14g-final-submission
-
-    * Team Number: 
-    * Team Name: 
-    * Team Members: 
-    * Github Repository URL: 
-    * Description of test hardware: (development boards, sensors, actuators, laptop + OS, etc) 
-
-## 1. Video Presentation
-
-## 2. Project Summary
-
-## 3. Hardware & Software Requirements
-
-## 4. Project Photos & Screenshots
-
-## Codebase
-
-- A link to your final embedded C firmware codebases
-- A link to your Node-RED dashboard code
-- Links to any other software required for the functionality of your device
-
-# A14G Final Submission
-
-/-->
-
 ## Team Details
 
 - **Team Number:** T13  
@@ -193,6 +164,8 @@ The system software managed real-time sensor data collection, automated actuatio
 
 ![3D Model for Case 2](IMAGES/3D_model_2.png)
 
+[3D PDF use Adobe](IMAGES/3D_PCB.pdf)
+
 ### The Altium Board design in 2D view
 
 ![2D](IMAGES/2D_PCB_GND.png)
@@ -206,6 +179,7 @@ The system software managed real-time sensor data collection, automated actuatio
 ![3D](IMAGES/PCB_3D_ALTIUM1.png)
 ![3D](IMAGES/PCB_3D_ALTIUM2.png)
 
+[OUTPUT JOB PDF](IMAGES/T13_S25_OutputJob_File.PDF)
 
 ### Thermal camera images while the board is running under load
 ![3V_TEST](IMAGES/LOADTEST/3V_TEST.png)
@@ -275,6 +249,7 @@ The system software managed real-time sensor data collection, automated actuatio
 ## Notes
 
 - Buzzer is driven using TCC2 on PA17
+- Servo Motor is driven by TCC1 on PA10
 - Pump uses GPIO to toggle ON and OFF
 - Fan uses GPIO to toggle ON and OFF
 - Non-blocking UART and I2C communication used wherever possible
