@@ -34,7 +34,11 @@
 - **Team Members:**  
   - Abhik Kumar  
   - Toma Yasuda
-- **GitHub Repository URL:** [https://github.com/your-repo-url-here](https://github.com/your-repo-url-here)
+- **GitHub Repository URL:** [LINK](https://github.com/ese5160/final-project-t13-dreamcatcher)
+- **Website Link:** [LINK]()
+- **Altium Design:** [LINK](https://upenn-eselabs.365.altium.com/designs/F10B40A4-B2BE-4F72-AF76-706C91D55F7E)
+- **Node Red UI:** [LINK](http://172.191.193.66:1880/ui/)
+
 
 ## Description of Test Hardware
 
@@ -59,7 +63,17 @@
 
 ## 1. Video Presentation
 
-- Link: [https://youtu.be/example-link](https://youtu.be/example-link)
+- Link: [https://youtu.be/Ixd16mNeDC0](https://youtu.be/Ixd16mNeDC0)
+  
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+  <iframe 
+    src="https://www.youtube.com/embed/Ixd16mNeDC0" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen 
+    style="position: absolute; top:0; left: 0; width: 100%; height: 100%;">
+  </iframe>
+</div>
 
 ---
 
