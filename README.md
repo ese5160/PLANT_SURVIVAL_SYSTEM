@@ -39,6 +39,18 @@
 - **Node Red UI:** [LINK](http://172.191.193.66:1880/ui/)
 
 
+## Project Pics
+
+![TEAM_PIC](IMAGES/PROJECT_PICS/TEAM_PHOTO.jpg)
+![Prize Pic](IMAGES/PROJECT_PICS/Prize_PIC.jpg)
+
+![BACK](IMAGES/PROJECT_PICS/BACK.jpeg)
+![FRONT0](IMAGES/PROJECT_PICS/FRONT0.jpeg)
+![NPK_TOP](IMAGES/PROJECT_PICS/NPK_TOP.jpeg)
+![SIDE](IMAGES/PROJECT_PICS/SIDE.jpeg)
+![TOP](IMAGES/PROJECT_PICS/TOP.jpeg)
+
+
 ## Description of Test Hardware
 
 - **Development Board:** Atmel SAMD21 Xplained Pro  
@@ -196,13 +208,22 @@ The system software managed real-time sensor data collection, automated actuatio
 ![3D](IMAGES/PCB_3D_ALTIUM2.png)
 
 
-Your final project, including any casework or interfacing elements that make up the full project (3D prints, screens, buttons, etc)
+### Thermal camera images while the board is running under load
+![3V_TEST](IMAGES/LOADTEST/3V_TEST.png)
+![3V3_TEST](IMAGES/LOADTEST/3V3_TEST.jpeg)
 
-The standalone PCBA, top
+![5V_LOAD](IMAGES/LOADTEST/5V_LOAD.png)
+![5V_TEST](IMAGES/LOADTEST/5V_TEST.jpeg)
 
-The standalone PCBA, bottom
+![12V_LOAD](IMAGES/LOADTEST/12V_LOAD.png)
+![12V_TEST](IMAGES/LOADTEST/12V_TEST.jpeg)
 
-Thermal camera images while the board is running under load (you may use your Board Bringup Thermal image here!)
+![BARREL_TEST1](IMAGES/LOADTEST/BARREL_TEST1.png)
+![BARREL_TEST2](IMAGES/LOADTEST/BARREL_TEST2.png)
+![BARREL_TEST3](IMAGES/LOADTEST/BARREL_TEST3.png)
+![BARREL_TEST4](IMAGES/LOADTEST/BARREL_TEST4.png)
+![IDEAL_STATE](IMAGES/LOADTEST/IDEAL_STATE.jpeg)
+
 
 ### Node-RED Dashboard Screenshot:
 ![Node-RED Dashboard](screenshots/nodered.png)
@@ -213,7 +234,7 @@ Thermal camera images while the board is running under load (you may use your Bo
 ### Circuit Setup:
 ![Hardware Setup](screenshots/hardware.jpg)
 
- # Block diagram of your system (You may need to update this to reflect changes throughout the semester.)
+ # Block diagram of your system
 
 ---
 
@@ -228,9 +249,14 @@ Thermal camera images while the board is running under load (you may use your Bo
 
 
 - **Additional Tools:** 
+  - Microchip Studio for development
+  - Python of updating the WIFI driver
+  - VS code for code search and navigation
+  - Saleae Logic Analyzer for waveform analysis
+  - Lab Oscilloscope and power supply for testing
   - Custom queue manager for data handling
   - UART timeout-based reading logic for NPK
-  - PWM duty-cycle tuning routines for motor, fan, and pump
+  - PWM duty-cycle tuning routines for buzzer and fan
 
 ---
 
@@ -249,8 +275,11 @@ Thermal camera images while the board is running under load (you may use your Bo
 ## Notes
 
 - Buzzer is driven using TCC2 on PA17
-- Pump uses TCC1 on PA02 (WO[0])
-- Fan uses TCC0 on PA11 (WO[3])
+- Pump uses GPIO to toggle ON and OFF
+- Fan uses GPIO to toggle ON and OFF
 - Non-blocking UART and I2C communication used wherever possible
 - All sensor values are debug-printed to serial terminal
-- NPK sensor can operates at 5V and the power supply for that might need to be separate than the RS485 (If RS485 is 3.3 V)
+- All I2C sensors were grouped to reduce the number of task
+- Status of all the Actuators were displayed in Node-red 
+- NPK sensor can operates at 5V and the power supply for that might need to be separate than the RS485 (If RS485 is 3.3 V) {No need of 12 V}
+- Same TCC doesn't work on multiple pins.
