@@ -213,6 +213,10 @@ Node-RED Dashboard – visualizing real-time sensor data and system control inte
 
 Node-RED backend dashboard – featuring real-time visualization, control logic, and wireless data monitoring interface.
 
+
+### Block diagram of your system
+![Hardware Setup](IMAGES/block-diagram.png)
+
 ---
 
 ## 5. Block diagram of the system
