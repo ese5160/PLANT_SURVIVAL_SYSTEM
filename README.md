@@ -6,14 +6,14 @@
   - Abhik Kumar  
   - Toma Yasuda
 - **GitHub Repository URL:** [LINK](https://github.com/ese5160/final-project-t13-dreamcatcher)
-- **Website Link:** [LINK]()
+- **Website Link:** [LINK](https://ese5160.github.io/PLANT_SURVIVAL_SYSTEM/)
 - **Node Red UI:** [LINK](http://172.191.193.66:1880/ui/)
 
 ---
 
 ## Project Pics
 
-<img src="IMAGES/PROJECT_PICS/TEAM_PHOTO.jpg" width="45%"></img>  <img src="IMAGES/PROJECT_PICS/Prize_PIC.jpg" width="45%"></img> 
+<img src="IMAGES/PROJECT_PICS/TEAM_PHOTO.jpg" width="45%"><img src="IMAGES/PROJECT_PICS/Prize_PIC.jpg" width="45%"></img> 
 
 Team DreamCatcher at Demo Day – showcasing their innovative plant monitoring system and receiving recognition for their work.
 
@@ -168,7 +168,7 @@ The system software managed real-time sensor data collection, automated actuatio
 
 ### 3D Model for Case
 
-<img src="IMAGES/3D_model_1.png" width="45%"></img> <img src="IMAGES/3D_model_2.png" width="45%"></img> 
+<img src="IMAGES/3D_model_1.png" width="45%"><<img src="IMAGES/3D_model_2.png" width="45%">
 
 
 ### The Altium Board design in 2D view
