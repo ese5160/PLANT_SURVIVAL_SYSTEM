@@ -72,7 +72,7 @@ Key Features:
 - **Actuators:**
   - Fan (GPIO)
   - Buzzer (PWM via TCC2 on PA17)
-  - Water Pump (GPIO based on STEMMA Soil Sensor)
+  - Water Pump (GPIO based on STEMMA Soil Sensor data)
   - Servo Motor (PWM via TCC0 on PA06)
 - **Other:**
   - Serial terminal interface over USB for debug
@@ -88,7 +88,7 @@ Key Features:
 #### Overview
 The IoT Plant Monitoring System was developed for real-time plant health monitoring and management using a combination of sensors and actuators. The system was powered by the SAMW25 microcontroller, which provided integrated Wi-Fi communication for data sharing and supported peripherals for environmental monitoring and actuation.
 
-The hardware integrated soil moisture sensors, temperature and humidity sensors, a light sensor, motion sensor, air quality sensor, and a soil NPK sensor. Actuators such as a water pump and motion deterrent system ensured automated responses. The system also featured GPS for location tracking and a microSD card for efficient data logging.
+The hardware integrated soil moisture sensors, temperature and humidity sensors, a light sensor, motion sensor, air quality sensor, and a soil NPK sensor. Actuators such as a water pump and motion deterrent system ensured automated responses. The system also featured a microSD card for efficient data logging.
 
 #### Definitions and Abbreviations
 - **SAMW25**: Microcontroller with integrated Wi-Fi
@@ -101,27 +101,27 @@ The hardware integrated soil moisture sensors, temperature and humidity sensors,
 
 - **HRS 02**: A capacitive soil moisture sensor measured soil water content (±3% accuracy) via I2C and triggered a water pump when moisture dropped below 30%.
 
-- **HRS 03**: A DHT22 sensor measured temperature and humidity with ±0.5°C and ±2% accuracy. Watering increased by 10% for every 5°C rise above 26°C.
+- **HRS 03**: A SHT4x sensor measured temperature and humidity with ±0.5°C and ±2% accuracy. It is used to monitor the environmental condition to help provide the suitable care based on the data.
 
 - **HRS 04**: A photodiode-based light sensor interfaced via ADC and detected lux levels (±2 lux). It helped disable sensors at night to save power.
 
-- **HRS 05**: A soil NPK sensor (via RS485 + UART) measured nitrogen, phosphorus, and potassium levels. A 12V boost converter powered it.
+- **HRS 05**: A soil NPK sensor (via RS485 + UART) measured nitrogen, phosphorus, and potassium levels. It requires only 5V and RS485 module is power vai different system based on the rating (3.3v or 5V module).
 
 - **HRS 06**: A DC water pump (500 ml/min) was activated via GPIO based on soil moisture and adjusted for temperature and weather.
 
 - **HRS 07**: A PIR motion sensor detected objects within 50 cm and triggered a buzzer via GPIO for 5 seconds.
 
-- **HRS 08**: An optional GPS module (Neo-6M) logged location and fetched weather forecasts.
+- **HRS 08**: RC filter to get the reference voltage of ADC to the value comparable for microcontroller and reduce the noise in the signal too.
 
 - **HRS 09**: The system ran on a 3.7V 2500mAh Li-ion battery with buck and boost converters for 3.3V, 5V, and 12V lines.
 
-- **HRS 10**: A microSD card (via SPI) logged timestamped data including GPS coordinates and sensor readings.
+- **HRS 10**: A microSD card (via SPI) logged data from sensors ad firmware images.
 
 - **HRS 11**: A PWM-controlled motor-driven puppet was activated on motion detection to deter animals.
 
-- **HRS 12**: Power and Wi-Fi LEDs provided system status.
+- **HRS 12**: Power and barrel LEDs provided system status.
 
-- **HRS 13**: RS485 interfaced with the NPK sensor and was powered by a 12V boost converter.
+- **HRS 13**: RS485 interfaced with the NPK sensor and was powered by a 12V boost converter (Can also be powered by 5V based on testing).
 
 - **HRS 14**: An SGP40 sensor monitored VOC levels (0–1000 ppm) via I2C.
 
