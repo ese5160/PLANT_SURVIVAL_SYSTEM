@@ -102,7 +102,7 @@ The hardware integrated soil moisture sensors, temperature and humidity sensors,
 
 - **HRS 04**: A photodiode-based light sensor interfaced via ADC and detected lux levels (±2 lux). It helped disable sensors at night to save power.
 
-- **HRS 05**: A soil NPK sensor (via RS485 + I2C) measured nitrogen, phosphorus, and potassium levels. A 12V boost converter powered it.
+- **HRS 05**: A soil NPK sensor (via RS485 + UART) measured nitrogen, phosphorus, and potassium levels. A 12V boost converter powered it.
 
 - **HRS 06**: A DC water pump (500 ml/min) was activated via GPIO based on soil moisture and adjusted for temperature and weather.
 
@@ -164,11 +164,33 @@ The system software managed real-time sensor data collection, automated actuatio
 
 ## 4. Project Photos & Screenshots
 
+### 3D Model for Case
+![3D Model for Case 1](IMAGES/3D_model_1.png)
+
+![3D Model for Case 2](IMAGES/3D_model_2.png)
+
+Your final project, including any casework or interfacing elements that make up the full project (3D prints, screens, buttons, etc)
+
+The standalone PCBA, top
+
+The standalone PCBA, bottom
+
+Thermal camera images while the board is running under load (you may use your Board Bringup Thermal image here!)
+
+The Altium Board design in 2D view (screenshot)
+
+The Altium Board design in 3D view (screenshot)
+
 ### Node-RED Dashboard Screenshot:
 ![Node-RED Dashboard](screenshots/nodered.png)
 
+### Node-RED Backend Screenshot:
+![Node-RED Dashboard](IMAGES/nodered-backend.png)
+
 ### Circuit Setup:
 ![Hardware Setup](screenshots/hardware.jpg)
+
+ # Block diagram of your system (You may need to update this to reflect changes throughout the semester.)
 
 ---
 
@@ -176,6 +198,9 @@ The system software managed real-time sensor data collection, automated actuatio
 
 - **Embedded C firmware:** [https://github.com/your-repo-url-here/firmware](https://github.com/your-repo-url-here/firmware)
 - **Node-RED Flow:** [https://github.com/your-repo-url-here/nodered](https://github.com/your-repo-url-here/nodered)
+
+- **Node-RED dashboard code:**[https://github.com/ese5160/final-project-t13-dreamcatcher/blob/main/Node-RED/node-red-final.json](https://github.com/ese5160/final-project-t13-dreamcatcher/blob/main/Node-RED/node-red-final.json)
+
 - **Additional Tools:** 
   - Custom queue manager for data handling
   - UART timeout-based reading logic for NPK
