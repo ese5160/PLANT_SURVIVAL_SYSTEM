@@ -137,21 +137,21 @@ The system software managed real-time sensor data collection, automated actuatio
 #### Definitions and Abbreviations
 - **Web Interface**: Platform for user interaction and control
 - **Wi-Fi**: Wireless communication protocol
-- **GPS**: Global Positioning System
+- **MQTT**: Publish-subscribe based messaging protocol for communication
 
 #### Functional Requirements
 
 - **SRS 01**: Sensor data was collected every 1 minute with ±1% sampling accuracy.
 
-- **SRS 02**: Wi-Fi transmitted real-time soil moisture, temperature, humidity, and light data to the cloud.
+- **SRS 02**: Wi-Fi transmitted real-time soil moisture, temperature, humidity, status, NPK and light data to the cloud.
 
 - **SRS 03**: NPK levels were measured every minute. Alerts were generated if nutrient levels dropped below thresholds.
 
-- **SRS 04**: The water pump activated below 30% soil moisture and turned off above 60%. GPS-based rain forecasts suppressed unnecessary watering.
+- **SRS 04**: The water pump activated below 400 soil moisture capacitive value and turned off when moisture reaches the set value. 
 
-- **SRS 05**: The PIR motion sensor activated a buzzer and puppet deterrent for 5 seconds upon motion. It was overrideable by button.
+- **SRS 05**: The PIR motion sensor activated a buzzer, fan and puppet deterrent for 5 seconds upon motion. It was overrideable by button.
 
-- **SRS 06**: GPS coordinates were logged for each plant and used to fetch forecast data.
+- **SRS 06**: Over the Air firmware update on button click for the GUI
 
 - **SRS 07**: Notifications were sent via email to alert users about critical conditions like temperature extremes or low nutrients.
 
@@ -159,7 +159,7 @@ The system software managed real-time sensor data collection, automated actuatio
 
 - **SRS 09**: A microSD card logged timestamped data and used a rolling buffer to manage storage. Data synced with cloud when Wi-Fi was available.
 
-- **SRS 10**: The fan remained on continuously to maintain airflow for stable sensor readings.
+- **SRS 10**: The fan also switches on based on motion or over heating to maintain airflow for stable sensor readings.
 
 
 ---
