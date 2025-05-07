@@ -207,7 +207,8 @@ The system software managed real-time sensor data collection, automated actuatio
 ### Circuit Setup:
 ![Hardware Setup](screenshots/hardware.jpg)
 
- # Block diagram of your system
+### Block diagram of your system
+![Hardware Setup](IMAGES/block-diagram.png)
 
 ---
 
