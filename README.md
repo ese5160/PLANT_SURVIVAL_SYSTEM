@@ -36,7 +36,6 @@
   - Toma Yasuda
 - **GitHub Repository URL:** [LINK](https://github.com/ese5160/final-project-t13-dreamcatcher)
 - **Website Link:** [LINK]()
-- **Altium Design:** [LINK](https://upenn-eselabs.365.altium.com/designs/F10B40A4-B2BE-4F72-AF76-706C91D55F7E)
 - **Node Red UI:** [LINK](http://172.191.193.66:1880/ui/)
 
 
@@ -183,6 +182,20 @@ The system software managed real-time sensor data collection, automated actuatio
 
 ![3D Model for Case 2](IMAGES/3D_model_2.png)
 
+### The Altium Board design in 2D view
+
+![2D](IMAGES/2D_PCB_GND.png)
+
+![2D](IMAGES/2D_PCB_VDD.png)
+
+
+### The Altium Board design in 3D view
+
+![3D](IMAGES/PCB_3D_ALTIUM0.png)
+![3D](IMAGES/PCB_3D_ALTIUM1.png)
+![3D](IMAGES/PCB_3D_ALTIUM2.png)
+
+
 Your final project, including any casework or interfacing elements that make up the full project (3D prints, screens, buttons, etc)
 
 The standalone PCBA, top
@@ -190,10 +203,6 @@ The standalone PCBA, top
 The standalone PCBA, bottom
 
 Thermal camera images while the board is running under load (you may use your Board Bringup Thermal image here!)
-
-The Altium Board design in 2D view (screenshot)
-
-The Altium Board design in 3D view (screenshot)
 
 ### Node-RED Dashboard Screenshot:
 ![Node-RED Dashboard](screenshots/nodered.png)
@@ -214,6 +223,9 @@ The Altium Board design in 3D view (screenshot)
 - **Node-RED Flow:** [https://github.com/your-repo-url-here/nodered](https://github.com/your-repo-url-here/nodered)
 
 - **Node-RED dashboard code:**[https://github.com/ese5160/final-project-t13-dreamcatcher/blob/main/Node-RED/node-red-final.json](https://github.com/ese5160/final-project-t13-dreamcatcher/blob/main/Node-RED/node-red-final.json)
+
+- **Altium Design:** [LINK](https://upenn-eselabs.365.altium.com/designs/F10B40A4-B2BE-4F72-AF76-706C91D55F7E)
+
 
 - **Additional Tools:** 
   - Custom queue manager for data handling
@@ -241,3 +253,4 @@ The Altium Board design in 3D view (screenshot)
 - Fan uses TCC0 on PA11 (WO[3])
 - Non-blocking UART and I2C communication used wherever possible
 - All sensor values are debug-printed to serial terminal
+- NPK sensor can operates at 5V and the power supply for that might need to be separate than the RS485 (If RS485 is 3.3 V)
