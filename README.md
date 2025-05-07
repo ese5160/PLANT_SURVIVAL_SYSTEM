@@ -13,17 +13,17 @@
 
 ## Project Pics
 
-<img src="IMAGES/PROJECT_PICS/TEAM_PHOTO.jpg" width="45%"><img src="IMAGES/PROJECT_PICS/Prize_PIC.jpg" width="45%"></img> 
+<img src="IMAGES/PROJECT_PICS/TEAM_PHOTO.jpg" width="45%"> <img src="IMAGES/PROJECT_PICS/Prize_PIC.jpg" width="45%">
 
 Team DreamCatcher at Demo Day – showcasing their innovative plant monitoring system and receiving recognition for their work.
 
 ![SIDE](IMAGES/PROJECT_PICS/SIDE.jpeg)
 
 
-<img src="IMAGES/PROJECT_PICS/FRONT0.jpeg" width="45%"></img> <img src="IMAGES/PROJECT_PICS/TOP.jpeg" width="45%"></img> 
+<img src="IMAGES/PROJECT_PICS/FRONT0.jpeg" width="45%">  <img src="IMAGES/PROJECT_PICS/TOP.jpeg" width="45%">  
 
 
-<img src="IMAGES/PROJECT_PICS/BACK.jpeg" width="45%"></img> <img src="IMAGES/PROJECT_PICS/NPK_TOP.jpeg" width="45%"></img> 
+<img src="IMAGES/PROJECT_PICS/BACK.jpeg" width="45%">  <img src="IMAGES/PROJECT_PICS/NPK_TOP.jpeg" width="45%">  
 
 Hardware views of the plant monitoring system – highlighting sensor integration, compact design, and component layout from multiple angles.
 
@@ -173,13 +173,13 @@ The system software managed real-time sensor data collection, automated actuatio
 
 ### The Altium Board design in 2D view
 
-<img src="IMAGES/2D_PCB_GND.png" width="45%"></img> <img src="IMAGES/2D_PCB_VDD.png" width="45%"></img> 
+<img src="IMAGES/2D_PCB_GND.png" width="45%">  <img src="IMAGES/2D_PCB_VDD.png" width="45%">  
 
 [OUTPUT JOB PDF](IMAGES/T13_S25_OutputJob_File.PDF)
 
 ### The Altium Board design in 3D view
 
-<img src="IMAGES/PCB_3D_ALTIUM0.png" width="30%"></img> <img src="IMAGES/PCB_3D_ALTIUM1.png" width="30%"></img> <img src="IMAGES/PCB_3D_ALTIUM2.png" width="30%"></img> 
+<img src="IMAGES/PCB_3D_ALTIUM0.png" width="30%">  <img src="IMAGES/PCB_3D_ALTIUM1.png" width="30%">  <img src="IMAGES/PCB_3D_ALTIUM2.png" width="30%">  
 
 [3D PDF use Adobe](IMAGES/3D_PCB.pdf)
 
@@ -187,20 +187,20 @@ Design-to-hardware pipeline – starting with vector outlines in Adobe Illustrat
 
 
 ### Thermal camera images while the board is running under load
-<img src="IMAGES/LOADTEST/3V_TEST.png" width="45%"></img> <img src="IMAGES/LOADTEST/3V3_TEST.jpeg" width="45%"></img> 
+<img src="IMAGES/LOADTEST/3V_TEST.png" width="45%">  <img src="IMAGES/LOADTEST/3V3_TEST.jpeg" width="45%">  
 
-<img src="IMAGES/LOADTEST/5V_LOAD.png" width="45%"></img> <img src="IMAGES/LOADTEST/5V_TEST.jpeg" width="45%"></img> 
+<img src="IMAGES/LOADTEST/5V_LOAD.png" width="45%">  <img src="IMAGES/LOADTEST/5V_TEST.jpeg" width="45%">  
 
-<img src="IMAGES/LOADTEST/12V_LOAD.png" width="45%"></img> <img src="IMAGES/LOADTEST/12V_TEST.jpeg" width="45%"></img> 
+<img src="IMAGES/LOADTEST/12V_LOAD.png" width="45%">  <img src="IMAGES/LOADTEST/12V_TEST.jpeg" width="45%">  
 
-<img src="IMAGES/LOADTEST/BARREL_TEST1.png" width="23%"></img> <img src="IMAGES/LOADTEST/BARREL_TEST2.png" width="23%"></img> <img src="IMAGES/LOADTEST/BARREL_TEST3.png" width="23%"></img> <img src="IMAGES/LOADTEST/BARREL_TEST4.png" width="23%"></img> 
+<img src="IMAGES/LOADTEST/BARREL_TEST1.png" width="23%">  <img src="IMAGES/LOADTEST/BARREL_TEST2.png" width="23%">  <img src="IMAGES/LOADTEST/BARREL_TEST3.png" width="23%">  <img src="IMAGES/LOADTEST/BARREL_TEST4.png" width="23%">  
 ![IDEAL_STATE](IMAGES/LOADTEST/IDEAL_STATE.jpeg)
 
 System under load testing – validating sensor stability, power management, and communication reliability under operational conditions.
 
 ### External sensor
 
-<img src="IMAGES/NPK_SENSOR.jpeg" width="45%"></img> <img src="IMAGES/I2C_SOIL_SENSOR.jpeg" width="45%"></img> 
+<img src="IMAGES/NPK_SENSOR.jpeg" width="45%">  <img src="IMAGES/I2C_SOIL_SENSOR.jpeg" width="45%">  
 
 
 ### Node-RED Dashboard:
