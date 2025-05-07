@@ -13,35 +13,21 @@
 
 ## Project Pics
 
-![TEAM_PIC](IMAGES/PROJECT_PICS/TEAM_PHOTO.jpg)
-![Prize Pic](IMAGES/PROJECT_PICS/Prize_PIC.jpg)
+<img src="IMAGES/PROJECT_PICS/TEAM_PHOTO.jpg" width="45%"></img>  <img src="IMAGES/PROJECT_PICS/Prize_PIC.jpg" width="45%"></img> 
 
-![BACK](IMAGES/PROJECT_PICS/BACK.jpeg)
-![FRONT0](IMAGES/PROJECT_PICS/FRONT0.jpeg)
-![NPK_TOP](IMAGES/PROJECT_PICS/NPK_TOP.jpeg)
+Team DreamCatcher at Demo Day – showcasing their innovative plant monitoring system and receiving recognition for their work.
+
 ![SIDE](IMAGES/PROJECT_PICS/SIDE.jpeg)
-![TOP](IMAGES/PROJECT_PICS/TOP.jpeg)
 
-## Description of Test Hardware
 
-- **Development Board:** Atmel SAMD21 Xplained Pro  
-- **Sensors:**
-  - SHT4x (Temperature and Humidity over I2C)
-  - STEMMA Soil Sensor (Capacitive Moisture and Temperature via I2C)
-  - SGP40 (VOC Sensor over I2C)
-  - Photoresistor (Analog ADC on PB03)
-  - PIR Motion Sensor (GPIO interrupt on PB02)
-  - NPK Sensor (UART communication on SERCOM5)
-- **Actuators:**
-  - Fan (GPIO)
-  - Buzzer (PWM via TCC2 on PA17)
-  - Water Pump (GPIO based on STEMMA Soil Sensor)
-  - Motor (PWM via TCC0 on PA06)
-- **Other:**
-  - Serial terminal interface over USB for debug
-  - FreeRTOS-based multi-tasking architecture
+<img src="IMAGES/PROJECT_PICS/FRONT0.jpeg" width="45%"></img> <img src="IMAGES/PROJECT_PICS/TOP.jpeg" width="45%"></img> 
 
----
+
+<img src="IMAGES/PROJECT_PICS/BACK.jpeg" width="45%"></img> <img src="IMAGES/PROJECT_PICS/NPK_TOP.jpeg" width="45%"></img> 
+
+Hardware views of the plant monitoring system – highlighting sensor integration, compact design, and component layout from multiple angles.
+
+
 
 ## 1. Video Presentation
 
@@ -70,6 +56,27 @@ Key Features:
 - Intelligent threshold-based actuation logic
 - Stack watermarks printed for task memory debugging
 - Node red based Frontend supports OTU
+
+---
+
+## Description of Test Hardware
+
+- **Development Board:** Atmel SAMD21 Xplained Pro  
+- **Sensors:**
+  - SHT4x (Temperature and Humidity over I2C)
+  - STEMMA Soil Sensor (Capacitive Moisture and Temperature via I2C)
+  - SGP40 (VOC Sensor over I2C)
+  - Photoresistor (Analog ADC on PB03)
+  - PIR Motion Sensor (GPIO interrupt on PB02)
+  - NPK Sensor (UART communication on SERCOM5 and RS485 UART module)
+- **Actuators:**
+  - Fan (GPIO)
+  - Buzzer (PWM via TCC2 on PA17)
+  - Water Pump (GPIO based on STEMMA Soil Sensor)
+  - Servo Motor (PWM via TCC0 on PA06)
+- **Other:**
+  - Serial terminal interface over USB for debug
+  - FreeRTOS-based multi-tasking architecture
 
 ---
 
@@ -160,65 +167,73 @@ The system software managed real-time sensor data collection, automated actuatio
 ## 4. Project Photos & Screenshots
 
 ### 3D Model for Case
-![3D Model for Case 1](IMAGES/3D_model_1.png)
 
-![3D Model for Case 2](IMAGES/3D_model_2.png)
+<img src="IMAGES/3D_model_1.png" width="45%"></img> <img src="IMAGES/3D_model_2.png" width="45%"></img> 
 
-[3D PDF use Adobe](IMAGES/3D_PCB.pdf)
 
 ### The Altium Board design in 2D view
 
-![2D](IMAGES/2D_PCB_GND.png)
-
-![2D](IMAGES/2D_PCB_VDD.png)
-
-
-### The Altium Board design in 3D view
-
-![3D](IMAGES/PCB_3D_ALTIUM0.png)
-![3D](IMAGES/PCB_3D_ALTIUM1.png)
-![3D](IMAGES/PCB_3D_ALTIUM2.png)
+<img src="IMAGES/2D_PCB_GND.png" width="45%"></img> <img src="IMAGES/2D_PCB_VDD.png" width="45%"></img> 
 
 [OUTPUT JOB PDF](IMAGES/T13_S25_OutputJob_File.PDF)
 
+### The Altium Board design in 3D view
+
+<img src="IMAGES/PCB_3D_ALTIUM0.png" width="30%"></img> <img src="IMAGES/PCB_3D_ALTIUM1.png" width="30%"></img> <img src="IMAGES/PCB_3D_ALTIUM2.png" width="30%"></img> 
+
+[3D PDF use Adobe](IMAGES/3D_PCB.pdf)
+
+Design-to-hardware pipeline – starting with vector outlines in Adobe Illustrator, imported into SolidWorks for 3D modeling, then integrated into Altium Designer to finalize the board shape and electrical layout.
+
+
 ### Thermal camera images while the board is running under load
-![3V_TEST](IMAGES/LOADTEST/3V_TEST.png)
-![3V3_TEST](IMAGES/LOADTEST/3V3_TEST.jpeg)
+<img src="IMAGES/LOADTEST/3V_TEST.png" width="45%"></img> <img src="IMAGES/LOADTEST/3V3_TEST.jpeg" width="45%"></img> 
 
-![5V_LOAD](IMAGES/LOADTEST/5V_LOAD.png)
-![5V_TEST](IMAGES/LOADTEST/5V_TEST.jpeg)
+<img src="IMAGES/LOADTEST/5V_LOAD.png" width="45%"></img> <img src="IMAGES/LOADTEST/5V_TEST.jpeg" width="45%"></img> 
 
-![12V_LOAD](IMAGES/LOADTEST/12V_LOAD.png)
-![12V_TEST](IMAGES/LOADTEST/12V_TEST.jpeg)
+<img src="IMAGES/LOADTEST/12V_LOAD.png" width="45%"></img> <img src="IMAGES/LOADTEST/12V_TEST.jpeg" width="45%"></img> 
 
-![BARREL_TEST1](IMAGES/LOADTEST/BARREL_TEST1.png)
-![BARREL_TEST2](IMAGES/LOADTEST/BARREL_TEST2.png)
-![BARREL_TEST3](IMAGES/LOADTEST/BARREL_TEST3.png)
-![BARREL_TEST4](IMAGES/LOADTEST/BARREL_TEST4.png)
+<img src="IMAGES/LOADTEST/BARREL_TEST1.png" width="23%"></img> <img src="IMAGES/LOADTEST/BARREL_TEST2.png" width="23%"></img> <img src="IMAGES/LOADTEST/BARREL_TEST3.png" width="23%"></img> <img src="IMAGES/LOADTEST/BARREL_TEST4.png" width="23%"></img> 
 ![IDEAL_STATE](IMAGES/LOADTEST/IDEAL_STATE.jpeg)
 
+System under load testing – validating sensor stability, power management, and communication reliability under operational conditions.
 
-### Node-RED Dashboard Screenshot:
-![Node-RED Dashboard](screenshots/nodered.png)
+### External sensor
 
-### Node-RED Backend Screenshot:
+<img src="IMAGES/NPK_SENSOR.jpeg" width="45%"></img> <img src="IMAGES/I2C_SOIL_SENSOR.jpeg" width="45%"></img> 
+
+
+### Node-RED Dashboard:
+![Node-RED Dashboard](IMAGES/NODE_RED_UI.png)
+
+Node-RED Dashboard – visualizing real-time sensor data and system control interface for the plant monitoring application.
+
+### Node-RED Backend:
 ![Node-RED Dashboard](IMAGES/nodered-backend.png)
 
-### Circuit Setup:
-![Hardware Setup](screenshots/hardware.jpg)
-
- # Block diagram of your system
+Node-RED backend dashboard – featuring real-time visualization, control logic, and wireless data monitoring interface.
 
 ---
 
-## 5. Codebase
+## 5. Block diagram of the system
+
+
+
+
+
+---
+
+## 6. Codebase
 
 - **Embedded C firmware:** [https://github.com/your-repo-url-here/firmware](https://github.com/your-repo-url-here/firmware)
+  
 - **Node-RED Flow:** [https://github.com/your-repo-url-here/nodered](https://github.com/your-repo-url-here/nodered)
 
 - **Node-RED dashboard code:**[https://github.com/ese5160/final-project-t13-dreamcatcher/blob/main/Node-RED/node-red-final.json](https://github.com/ese5160/final-project-t13-dreamcatcher/blob/main/Node-RED/node-red-final.json)
 
 - **Altium Design:** [LINK](https://upenn-eselabs.365.altium.com/designs/F10B40A4-B2BE-4F72-AF76-706C91D55F7E)
+  
+- **BOM:** [LINK](IMAGES/A01G_BOM_[DreamCatcher]_Team_13.xlsx)
 
 
 - **Additional Tools:** 
