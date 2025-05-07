@@ -38,6 +38,7 @@
 - **Website Link:** [LINK]()
 - **Node Red UI:** [LINK](http://172.191.193.66:1880/ui/)
 
+---
 
 ## Project Pics
 
@@ -49,7 +50,6 @@
 ![NPK_TOP](IMAGES/PROJECT_PICS/NPK_TOP.jpeg)
 ![SIDE](IMAGES/PROJECT_PICS/SIDE.jpeg)
 ![TOP](IMAGES/PROJECT_PICS/TOP.jpeg)
-
 
 ## Description of Test Hardware
 
@@ -183,7 +183,6 @@ The system software managed real-time sensor data collection, automated actuatio
 
 - **SRS 10**: The fan remained on continuously to maintain airflow for stable sensor readings.
 
----
 
 ---
 
@@ -238,7 +237,7 @@ The system software managed real-time sensor data collection, automated actuatio
 
 ---
 
-## Codebase
+## 5. Codebase
 
 - **Embedded C firmware:** [https://github.com/your-repo-url-here/firmware](https://github.com/your-repo-url-here/firmware)
 - **Node-RED Flow:** [https://github.com/your-repo-url-here/nodered](https://github.com/your-repo-url-here/nodered)
@@ -264,6 +263,7 @@ The system software managed real-time sensor data collection, automated actuatio
 
 | Task                    | Description                                       |
 |-------------------------|---------------------------------------------------|
+| SPI  TASK               | SD Card communication                             |
 | I2C Task                | SHT4x, Soil Sensor, SGP40 polling                 |
 | ADC Task                | Photoresistor peak sampling                       |
 | UART Task               | NPK sensor polling with timeout protection       |
@@ -283,3 +283,4 @@ The system software managed real-time sensor data collection, automated actuatio
 - Status of all the Actuators were displayed in Node-red 
 - NPK sensor can operates at 5V and the power supply for that might need to be separate than the RS485 (If RS485 is 3.3 V) {No need of 12 V}
 - Same TCC doesn't work on multiple pins.
+- MCU Internal reference voltage is not 3.3v, so using ADC narrows the resolution.
