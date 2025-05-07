@@ -29,7 +29,7 @@
 
 ## Team Details
 
-- **Team Number:** A14G  
+- **Team Number:** T13  
 - **Team Name:** DreamCatcher  
 - **Team Members:**  
   - Abhik Kumar  
@@ -65,7 +65,7 @@
 
 ## 2. Project Summary
 
-DreamCatcher is an environmental monitoring and response system built using FreeRTOS and a SAMD21 microcontroller. It senses humidity, temperature, light levels, soil moisture, air quality, and detects motion to trigger appropriate actuation responses like fan control, buzzer alarms, pump watering, and motor activation (Puppet control). The system includes UART-based NPK soil nutrient sensing, and is organized into well-isolated drivers with non-blocking asynchronous patterns for sensor polling. Sensor values are pushed to a queue for central processing.
+Plant Survival System is an environmental monitoring and response system built using FreeRTOS and a SAMD21 microcontroller. It senses humidity, temperature, light levels, soil moisture, air quality, and detects motion to trigger appropriate actuation responses like fan control, buzzer alarms, pump watering, and motor activation (Puppet control). The system includes UART-based NPK soil nutrient sensing, and is organized into well-isolated drivers with non-blocking asynchronous patterns for sensor polling. Sensor values are pushed to a queue for central processing.
 
 Key Features:
 - Asynchronous I2C, UART, and ADC integration
