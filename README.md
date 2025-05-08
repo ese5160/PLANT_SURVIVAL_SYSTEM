@@ -47,36 +47,85 @@ Hardware views of the plant monitoring system – highlighting sensor integratio
 
 ## 2. Project Summary
 
-Plant Survival System is an environmental monitoring and response system built using FreeRTOS and a SAMD21 microcontroller. It senses humidity, temperature, light levels, soil moisture, air quality, and detects motion to trigger appropriate actuation responses like fan control, buzzer alarms, pump watering, and motor activation (Puppet control). The system includes UART-based NPK soil nutrient sensing, and is organized into well-isolated drivers with non-blocking asynchronous patterns for sensor polling. Sensor values are pushed to a queue for central processing.
+### Device Description
 
-Key Features:
-- Asynchronous I2C, UART, and ADC integration
-- Interrupt-based motion detection
-- Modular peripheral drivers (buzzer, fan, puppet, pump)
-- Intelligent threshold-based actuation logic
-- Stack watermarks printed for task memory debugging
-- Node red based Frontend supports OTU
+The **Plant Survival System** is a real-time environmental sensing and response unit designed to automate plant care and provide rich telemetry via the Internet. Built on a SAMD21 microcontroller with FreeRTOS, it integrates sensors and actuators for smart irrigation, climate monitoring, and deterrence systems.
+
+We were inspired by the lack of reliable, scalable, and low-power plant monitoring solutions suitable for both indoor and outdoor use. This device helps automate watering, air quality tracking, and soil nutrient monitoring — solving problems for both hobbyists and agriculture tech use cases.
+
+### How the Internet Augments Functionality
+
+The system uses Wi-Fi (via the SAMW25 chip) to send live sensor data to a **Node-RED dashboard**, enabling real-time remote monitoring. It also supports **Over-The-Air (OTA) updates** and **email notifications**, expanding usability and eliminating the need for physical intervention. All key data (e.g., soil moisture, air quality, NPK) is visualized remotely, enabling data-driven plant care.
 
 ---
 
-## Description of Test Hardware
+### Device Functionality
 
-- **Development Board:** Atmel SAMD21 Xplained Pro  
-- **Sensors:**
-  - SHT4x (Temperature and Humidity over I2C)
-  - STEMMA Soil Sensor (Capacitive Moisture and Temperature via I2C)
-  - SGP40 (VOC Sensor over I2C)
-  - Photoresistor (Analog ADC on PB03)
-  - PIR Motion Sensor (GPIO interrupt on PB02)
-  - NPK Sensor (UART communication on SERCOM5 and RS485 UART module)
-- **Actuators:**
-  - Fan (GPIO)
-  - Buzzer (PWM via TCC2 on PA17)
-  - Water Pump (GPIO based on STEMMA Soil Sensor data)
-  - Servo Motor (PWM via TCC0 on PA06)
-- **Other:**
-  - Serial terminal interface over USB for debug
-  - FreeRTOS-based multi-tasking architecture
+The device architecture includes:
+
+- **Sensors:**  
+  - SHT4x (Temperature & Humidity via I2C)  
+  - STEMMA Soil Sensor (Moisture & Temperature via I2C)  
+  - SGP40 (Air Quality VOCs via I2C)  
+  - Photoresistor (Analog input via ADC)  
+  - PIR Motion Sensor (Digital input via GPIO interrupt)  
+  - UART-based NPK Sensor via RS485  
+
+- **Actuators:**  
+  - DC Water Pump (GPIO trigger)  
+  - Fan (GPIO  trigger)  
+  - Buzzer (PWM via TCC2 on PA17)  
+  - Servo-based Puppet (PWM via TCC0 on PA10)  
+
+- **MCU Platform:**  
+  - SAMD21 Cortex-M0+ running FreeRTOS  
+  - Node-RED UI hosted via Wi-Fi on SAMW25  
+
+---
+
+### Challenges
+
+- **Firmware:**  
+  Integrating blocking UART-based sensors like the NPK required timeout-based non-blocking reads to prevent task starvation.
+
+- **Hardware:**  
+  Conflicts in timer and PWM channel assignments (TCC/TC) required a full mapping overhaul. We assigned unique TCC instances per actuator.
+
+- **Integration:**  
+  Debugging I2C bus stability involved using stronger pull-up resistors and reducing communication frequency to ensure reliability.
+
+---
+
+### Prototype Learnings
+
+- Plan all **TCC and pin muxing** early — same TCC can't drive multiple wave outputs on separate pins without conflict.
+- Ensure **timeout-based UART drivers** for all serial sensors — avoids blocking FreeRTOS tasks.
+- Implement **stack monitoring** with `uxTaskGetStackHighWaterMark` to catch task crashes during integration.
+- For environmental sensors, keep **airflow consistent** using fans and avoid proximity to heat sources like regulators.
+
+**If we built it again:**
+- Use SAMD51 for more timers and memory  
+- Add BLE for smartphone pairing  
+- Use waterproof casings and modular connectors  
+
+---
+
+### Next Steps & Takeaways
+
+- Integrate **weather forecast APIs** to override watering logic
+- Add **capacitive touch** or push-button for manual override
+- Switch to **low-power sleep mode** and use interrupts to wake up
+- Extend Node-RED UI with user authentication and logging history
+
+### What We Learned in ESE5160
+
+This course taught us complete embedded prototyping from hardware interfacing to cloud integration. We learned:
+
+- FreeRTOS task scheduling and memory debugging  
+- Real-time sensor management using I2C, UART, and ADC  
+- Building asynchronous, non-blocking device drivers  
+- Using Node-RED for UI + MQTT for IoT data streams  
+- Designing reliable firmware and PCBs with Altium  
 
 ---
 
@@ -105,7 +154,7 @@ The hardware integrated soil moisture sensors, temperature and humidity sensors,
 
 - **HRS 04**: A photodiode-based light sensor interfaced via ADC and detected lux levels (±2 lux). It helped disable sensors at night to save power.
 
-- **HRS 05**: A soil NPK sensor (via RS485 + UART) measured nitrogen, phosphorus, and potassium levels. It requires only 5V and RS485 module is power vai different system based on the rating (3.3v or 5V module).
+- **HRS 05**: A soil NPK sensor (via RS485 + UART) measured nitrogen, phosphorus, and potassium levels. It requires only 5V and RS485 module is powered via a separate system based on the rating (3.3v or 5V module).
 
 - **HRS 06**: A DC water pump (500 ml/min) was activated via GPIO based on soil moisture and adjusted for temperature and weather.
 
@@ -115,7 +164,7 @@ The hardware integrated soil moisture sensors, temperature and humidity sensors,
 
 - **HRS 09**: The system ran on a 3.7V 2500mAh Li-ion battery with buck and boost converters for 3.3V, 5V, and 12V lines.
 
-- **HRS 10**: A microSD card (via SPI) logged data from sensors ad firmware images.
+- **HRS 10**: A microSD card (via SPI) logged data from sensors and firmware images.
 
 - **HRS 11**: A PWM-controlled motor-driven puppet was activated on motion detection to deter animals.
 
@@ -151,7 +200,7 @@ The system software managed real-time sensor data collection, automated actuatio
 
 - **SRS 05**: The PIR motion sensor activated a buzzer, fan and puppet deterrent for 5 seconds upon motion. It was overrideable by button.
 
-- **SRS 06**: Over the Air firmware update on button click for the GUI
+- **SRS 06**: Over the Air firmware update on button click for the GUI.
 
 - **SRS 07**: Notifications were sent via email to alert users about critical conditions like temperature extremes or low nutrients.
 
@@ -168,7 +217,7 @@ The system software managed real-time sensor data collection, automated actuatio
 
 ### 3D Model for Case
 
-<img src="IMAGES/3D_model_1.png" width="45%"><<img src="IMAGES/3D_model_2.png" width="45%">
+<img src="IMAGES/3D_model_1.png" width="45%">  <img src="IMAGES/3D_model_2.png" width="45%">
 
 
 ### The Altium Board design in 2D view
@@ -187,14 +236,16 @@ Design-to-hardware pipeline – starting with vector outlines in Adobe Illustrat
 
 
 ### Thermal camera images while the board is running under load
-<img src="IMAGES/LOADTEST/3V_TEST.png" width="45%">  <img src="IMAGES/LOADTEST/3V3_TEST.jpeg" width="45%">  
+<img src="IMAGES/LOADTEST/3V_TEST.png" width="45%">  <img src="IMAGES/LOADTEST/5V_LOAD.png" width="45%">  
+<img src="IMAGES/LOADTEST/3V3_TEST.jpeg" width="45%">  <img src="IMAGES/LOADTEST/5V_TEST.jpeg" width="45%">  
 
-<img src="IMAGES/LOADTEST/5V_LOAD.png" width="45%">  <img src="IMAGES/LOADTEST/5V_TEST.jpeg" width="45%">  
+<img src="IMAGES/LOADTEST/12V_LOAD.png" width="45%">  <img src="IMAGES/LOADTEST/BARREL_TEST1.png" width="45%"> 
 
-<img src="IMAGES/LOADTEST/12V_LOAD.png" width="45%">  <img src="IMAGES/LOADTEST/12V_TEST.jpeg" width="45%">  
+<img src="IMAGES/LOADTEST/12V_TEST.jpeg" width="45%">  <img src="IMAGES/LOADTEST/IDEAL_STATE.jpeg" width="45%">
 
-<img src="IMAGES/LOADTEST/BARREL_TEST1.png" width="23%">  <img src="IMAGES/LOADTEST/BARREL_TEST2.png" width="23%">  <img src="IMAGES/LOADTEST/BARREL_TEST3.png" width="23%">  <img src="IMAGES/LOADTEST/BARREL_TEST4.png" width="23%">  
-![IDEAL_STATE](IMAGES/LOADTEST/IDEAL_STATE.jpeg)
+<img src="IMAGES/LOADTEST/BARREL_TEST2.png" width="33%">  <img src="IMAGES/LOADTEST/BARREL_TEST3.png" width="33%">  <img src="IMAGES/LOADTEST/BARREL_TEST4.png" width="33%"> 
+
+
 
 System under load testing – validating sensor stability, power management, and communication reliability under operational conditions.
 
@@ -202,6 +253,7 @@ System under load testing – validating sensor stability, power management, and
 
 <img src="IMAGES/NPK_SENSOR.jpeg" width="45%">  <img src="IMAGES/I2C_SOIL_SENSOR.jpeg" width="45%">  
 
+External NPK sensor (UART, Model: DFROBOT SEN-0462) and soil moisture & humidity sensor (I2C, Model: Stemma) were used to monitor soil health while keeping the main board safe from moisture and corrosion.
 
 ### Node-RED Dashboard:
 ![Node-RED Dashboard](IMAGES/NODE_RED_UI.png)
@@ -239,7 +291,7 @@ Comprehensive system diagram – illustrating the functional flow of data betwee
 
 - **Additional Tools:** 
   - Microchip Studio for development
-  - Python of updating the WIFI driver
+  - Python scripts were used to update the Wi-Fi driver
   - VS code for code search and navigation
   - Saleae Logic Analyzer for waveform analysis
   - Lab Oscilloscope and power supply for testing
@@ -268,7 +320,7 @@ Comprehensive system diagram – illustrating the functional flow of data betwee
 - Servo Motor is driven by TCC1 on PA10
 - Pump uses GPIO to toggle ON and OFF
 - Fan uses GPIO to toggle ON and OFF
-- Non-blocking UART and I2C communication used wherever possible
+- Non-blocking UART and I2C communication used wherever applicable
 - All sensor values are debug-printed to serial terminal
 - All I2C sensors were grouped to reduce the number of task
 - Status of all the Actuators were displayed in Node-red 
