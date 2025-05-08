@@ -126,6 +126,12 @@ This course taught us complete embedded prototyping from hardware interfacing to
 - Building asynchronous, non-blocking device drivers  
 - Using Node-RED for UI + MQTT for IoT data streams  
 - Designing reliable firmware and PCBs with Altium  
+  
+### Project Links
+
+- **Node-RED Flow:** [LINK](http://172.191.193.66:1880/ui/)
+
+- **Altium Design:** [LINK](https://upenn-eselabs.365.altium.com/designs/F10B40A4-B2BE-4F72-AF76-706C91D55F7E)
 
 ---
 
