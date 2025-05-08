@@ -156,7 +156,7 @@ The hardware integrated soil moisture sensors, temperature and humidity sensors,
 
 - **HRS 01**: The SAMW25 microcontroller was used for processing, Wi-Fi communication, and interfacing with peripherals via I2C, SPI, UART, and GPIO.
 
-- **HRS 02**: A capacitive soil moisture sensor measured soil water content (±3% accuracy) via I2C and triggered a water pump when moisture dropped below 30%.
+- **HRS 02**: A capacitive soil moisture sensor measured soil water content (±3% accuracy) via I2C and triggered a water pump when moisture dropped below 400 soil moisture capacitive value.
 
 - **HRS 03**: A SHT4x sensor measured temperature and humidity with ±0.5°C and ±2% accuracy. It is used to monitor the environmental condition to help provide the suitable care based on the data.
 
@@ -183,6 +183,26 @@ The hardware integrated soil moisture sensors, temperature and humidity sensors,
 - **HRS 14**: An SGP40 sensor monitored VOC levels (0–1000 ppm) via I2C.
 
 - **HRS 15**: A 5V wall adapter powered high-current devices like the pump and fan.
+
+#### Validation of Hardware
+
+| Hardware Requirements | Review                              |
+|-----------------------|-------------------------------------|
+| HRS 01                | Achieved. |
+| HRS 02                | Achieved. |
+| HRS 03                | Achieved. |
+| HRS 04                | Achieved. |
+| HRS 05                | Achieved. |
+| HRS 06                | Not achieved. The water pump does not deliver 500 ml/min. The water pump only delivers approximately 100 ml/min, as specified in the datasheet. The feature to determine whether to water based on the forecasted weather was not implemented. |
+| HRS 07                | Achieved. |
+| HRS 08                | Achieved. |
+| HRS 09                | Achieved. |
+| HRS 10                | Not achieved. Data collected by NPK sensor was able to be stored in SD card, however other sensor data is not stored. The firmware image was able to stored in SD card. |
+| HRS 11                | Achieved. |
+| HRS 12                | Achieved. |
+| HRS 13                | Achieved. |
+| HRS 14                | Achieved. |
+| HRS 15                | Achieved. |
 
 ---
 
@@ -218,7 +238,7 @@ The system software managed real-time sensor data collection, automated actuatio
 
 - **SRS 10**: The fan also switches on based on motion or over heating to maintain airflow for stable sensor readings.
 
-#### validation of Software
+#### Validation of Software
 
 | Software Requirements | Review                              |
 |-----------------------|-------------------------------------|
