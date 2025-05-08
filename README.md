@@ -240,6 +240,13 @@ The system software managed real-time sensor data collection, automated actuatio
 
 Design-to-hardware pipeline – starting with vector outlines in Adobe Illustrator, imported into SolidWorks for 3D modeling, then integrated into Altium Designer to finalize the board shape and electrical layout.
 
+### The standalone PCBA
+
+<img src="IMAGES/PCBA_TOP.jpeg" width="45%"></img> <img src="IMAGES/PCBA_BOTTOM.jpeg" width="45%"></img> 
+<img src="IMAGES/PCBA_SIDE.jpeg" width="45%"></img> <img src="IMAGES/PCBA_TOP_SIDE.jpeg" width="45%"></img> 
+
+Manufactured PCBAs – final assembled boards from our custom design, ready for integration and testing.
+
 
 ### Thermal camera images while the board is running under load
 <img src="IMAGES/LOADTEST/3V_TEST.png" width="45%">  <img src="IMAGES/LOADTEST/5V_LOAD.png" width="45%">  
