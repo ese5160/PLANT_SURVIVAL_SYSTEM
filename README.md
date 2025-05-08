@@ -242,8 +242,8 @@ Design-to-hardware pipeline – starting with vector outlines in Adobe Illustrat
 
 ### The standalone PCBA
 
-<img src="IMAGES/PCBA_TOP.jpeg" width="45%"></img> <img src="IMAGES/PCBA_BOTTOM.jpeg" width="45%"></img> 
-<img src="IMAGES/PCBA_SIDE.jpeg" width="45%"></img> <img src="IMAGES/PCBA_TOP_SIDE.jpeg" width="45%"></img> 
+<img src="IMAGES/PCBA_TOP.jpeg" width="45%"> <img src="IMAGES/PCBA_BOTTOM.jpeg" width="45%">
+<img src="IMAGES/PCBA_SIDE.jpeg" width="45%"> <img src="IMAGES/PCBA_TOP_SIDE.jpeg" width="45%">
 
 Manufactured PCBAs – final assembled boards from our custom design, ready for integration and testing.
 
