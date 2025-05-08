@@ -267,7 +267,7 @@ Node-RED backend dashboard – featuring real-time visualization, control logic,
 
 ---
 
-## 5. Block diagram of the system
+### Block diagram of the system:
 
 ![Hardware Setup](IMAGES/block-diagram.png)
 
@@ -276,13 +276,13 @@ Comprehensive system diagram – illustrating the functional flow of data betwee
 
 ---
 
-## 6. Codebase
+## 5. Codebase
 
-- **Embedded C firmware:** [https://github.com/your-repo-url-here/firmware](https://github.com/your-repo-url-here/firmware)
+- **Embedded C firmware:** [LINK](https://github.com/ese5160/final-project-t13-dreamcatcher/)
   
-- **Node-RED Flow:** [https://github.com/your-repo-url-here/nodered](https://github.com/your-repo-url-here/nodered)
+- **Node-RED Flow:** [LINK](http://172.191.193.66:1880/ui/)
 
-- **Node-RED dashboard code:**[https://github.com/ese5160/final-project-t13-dreamcatcher/blob/main/Node-RED/node-red-final.json](https://github.com/ese5160/final-project-t13-dreamcatcher/blob/main/Node-RED/node-red-final.json)
+- **Node-RED dashboard code:**[LINK](https://github.com/ese5160/final-project-t13-dreamcatcher/blob/main/Node-RED/node-red-final.json)
 
 - **Altium Design:** [LINK](https://upenn-eselabs.365.altium.com/designs/F10B40A4-B2BE-4F72-AF76-706C91D55F7E)
   
