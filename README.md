@@ -154,35 +154,35 @@ The hardware integrated soil moisture sensors, temperature and humidity sensors,
 
 #### Functional Requirements
 
-- **HRS 01**: The SAMW25 microcontroller was used for processing, Wi-Fi communication, and interfacing with peripherals via I2C, SPI, UART, and GPIO.
+- **HRS 01**: The SAMW25 microcontroller shall be used for processing, Wi-Fi communication, and interfacing with peripherals via I2C, SPI, UART, and GPIO.
 
-- **HRS 02**: A capacitive soil moisture sensor measured soil water content (±3% accuracy) via I2C and triggered a water pump when moisture dropped below 400 soil moisture capacitive value.
+- **HRS 02**: A capacitive soil moisture sensor shall be used to measure soil water content (±3% accuracy) via I2C and shall trigger a water pump when moisture drops below a capacitive value of 400.
 
-- **HRS 03**: A SHT4x sensor measured temperature and humidity with ±0.5°C and ±2% accuracy. It is used to monitor the environmental condition to help provide the suitable care based on the data.
+- **HRS 03**: An SHT4x sensor shall measure temperature and humidity with ±0.5°C and ±2% accuracy. It shall be used to monitor environmental conditions to support suitable plant care.
 
-- **HRS 04**: A photodiode-based light sensor interfaced via ADC and detected lux levels (±2 lux). It helped disable sensors at night to save power.
+- **HRS 04**: A photodiode-based light sensor shall be interfaced via ADC and shall detect lux levels (±2 lux). It shall assist in disabling certain sensors at night to save power.
 
-- **HRS 05**: A soil NPK sensor (via RS485 + UART) measured nitrogen, phosphorus, and potassium levels. It requires only 5V and RS485 module is powered via a separate system based on the rating (3.3v or 5V module).
+- **HRS 05**: A soil NPK sensor (via RS485 + UART) shall be used to measure nitrogen, phosphorus, and potassium levels. It shall require 5V, and the RS485 module shall be powered via a separate supply (3.3V or 5V depending on module rating).
 
-- **HRS 06**: A DC water pump (500 ml/min) was activated via GPIO based on soil moisture and adjusted for temperature and weather.
+- **HRS 06**: A DC water pump (500 ml/min) shall be activated via GPIO based on soil moisture readings and shall adjust based on temperature and weather data.
 
-- **HRS 07**: A PIR motion sensor detected objects within 50 cm and triggered a buzzer via GPIO for 5 seconds.
+- **HRS 07**: A PIR motion sensor shall detect objects within a 50 cm radius and shall trigger a buzzer via GPIO for 5 seconds.
 
-- **HRS 08**: RC filter to get the reference voltage of ADC to the value comparable for microcontroller and reduce the noise in the signal too.
+- **HRS 08**: An RC filter shall be used to set the reference voltage of the ADC to a value suitable for the microcontroller and to reduce signal noise.
 
-- **HRS 09**: The system ran on a 3.7V 2500mAh Li-ion battery with buck and boost converters for 3.3V, 5V, and 12V lines.
+- **HRS 09**: The system shall operate on a 3.7V 2500mAh Li-ion battery with buck and boost converters supplying 3.3V, 5V, and 12V rails.
 
-- **HRS 10**: A microSD card (via SPI) logged data from sensors and firmware images.
+- **HRS 10**: A microSD card interfaced via SPI shall log sensor data and firmware images.
 
-- **HRS 11**: A PWM-controlled motor-driven puppet was activated on motion detection to deter animals.
+- **HRS 11**: A PWM-controlled motor-driven puppet shall be activated on motion detection to deter animals.
 
-- **HRS 12**: Power and barrel LEDs provided system status.
+- **HRS 12**: Power and barrel connector LEDs shall be included to indicate system and power status.
 
-- **HRS 13**: RS485 interfaced with the NPK sensor and was powered by a 12V boost converter (Can also be powered by 5V based on testing).
+- **HRS 13**: An RS485 interface shall be used for the NPK sensor, powered by a 12V boost converter (or 5V depending on module requirements).
 
-- **HRS 14**: An SGP40 sensor monitored VOC levels (0–1000 ppm) via I2C.
+- **HRS 14**: An SGP40 sensor shall be used to monitor VOC levels (0–1000 ppm) via I2C.
 
-- **HRS 15**: A 5V wall adapter powered high-current devices like the pump and fan.
+- **HRS 15**: A 5V wall adapter shall be used to power high-current devices such as the pump and fan.
 
 #### Validation of Hardware
 
@@ -218,26 +218,26 @@ The system software managed real-time sensor data collection, automated actuatio
 
 #### Functional Requirements
 
-- **SRS 01**: Sensor data was collected every 1 minute with ±1% sampling accuracy.
+- **SRS 01**: Sensor data shall be collected every 1 minute with ±1% sampling accuracy.
 
-- **SRS 02**: Wi-Fi transmitted real-time soil moisture, soil temperature, air temperature, air humidity, air quality, light intensity, nitrogen, phosphorus, and potassium data to the cloud.
+- **SRS 02**: The system shall transmit real-time sensor data — including soil moisture, soil temperature, air temperature, humidity, air quality, light intensity, and NPK levels — to the cloud over Wi-Fi.
 
-- **SRS 03**: NPK levels were measured every minute. Alerts were generated by sending email if nutrient levels dropped below thresholds.
+- **SRS 03**: NPK levels shall be measured every minute. Alerts shall be sent via email when any nutrient value drops below its respective threshold.
 
-- **SRS 04**: The water pump activated below 400 soil moisture capacitive value and turned off when moisture reaches the set value. 
+- **SRS 04**: The water pump shall activate when soil moisture drops below a capacitive value of 400 and shall turn off once the moisture reaches the predefined setpoint.
 
-- **SRS 05**: The PIR motion sensor activated a buzzer, fan and puppet deterrent for 5 seconds upon motion. It was overrideable by button.
+- **SRS 05**: The PIR motion sensor shall trigger a buzzer, fan, and puppet deterrent for 5 seconds upon detecting motion. This response shall be overrideable via a user-controlled button.
 
-- **SRS 06**: Over the Air firmware update on button click for the GUI.
+- **SRS 06**: The system shall support Over-The-Air (OTA) firmware updates initiated by a button click within the GUI.
 
-- **SRS 07**: Notifications were sent via email to alert users about critical conditions like temperature extremes or low nutrients.
+- **SRS 07**: The system shall send email notifications to inform users about critical conditions, such as temperature extremes or low soil nutrients.
 
-- **SRS 08**: Real-time and historical data were visualized through a web interface with graphs and system status.
+- **SRS 08**: Real-time and historical data shall be visualized through a web interface, which shall include graphs, trends, and live status indicators.
 
-- **SRS 09**: A microSD card logged timestamped data and used a rolling buffer to manage storage. Data synced with cloud when Wi-Fi was available.
+- **SRS 09**: A microSD card shall log timestamped sensor data using a rolling buffer to manage storage efficiently. Data shall sync to the cloud when Wi-Fi connectivity is available.
 
-- **SRS 10**: The fan also switches on based on motion or over heating to maintain airflow for stable sensor readings.
-
+- **SRS 10**: The fan shall turn on automatically in response to motion detection or elevated temperature to ensure consistent airflow and accurate sensor readings.
+  
 #### Validation of Software
 
 | Software Requirements | Review                              |
