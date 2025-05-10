@@ -197,7 +197,7 @@ The hardware integrated soil moisture sensors, temperature and humidity sensors,
 | HRS 07                | Achieved. |
 | HRS 08                | Achieved. |
 | HRS 09                | Achieved. |
-| HRS 10                | Not achieved. Data collected by NPK sensor was able to be stored in SD card, however other sensor data is not stored. The firmware image was able to stored in SD card. |
+| HRS 10                | Achieved. Data collected by NPK sensor and other sensors was able to be stored in SD card. The firmware image was able to stored in SD card. |
 | HRS 11                | Achieved. |
 | HRS 12                | Achieved. |
 | HRS 13                | Achieved. |
@@ -246,11 +246,11 @@ The system software managed real-time sensor data collection, automated actuatio
 | SRS 02                | Achieved. All data were displayed on the Node-RED dashboard which is shown in the Node-RED dashboard images. |
 | SRS 03                | Achieved. NPK level was measured every 5 seconds and stored in SD card. Email notification was sent when nutrient levels dropped as shown in video. |
 | SRS 04                | Achieved. The water pump was activated when soil moisture measured below 400 capacitive value as shown in video. |
-| SRS 05                | Not achieved. The PIR motion sensor activate a buzzer, fan, and servo for 5 seconds. However, the button to stop the motion deterrent system was not implemented. |
+| SRS 05                | Not achieved. The PIR motion sensor activate a buzzer, fan, and servo for 5 seconds. However, the button to stop the motion deterrent system was not implemented. To tackle this we used a shade to block the motion sensor filed of view. |
 | SRS 06                | Achieved. The firmware update and gold image copying were initiated via buttons on the Node-RED dashboard. |
 | SRS 07                | Achieved. An email notification was successfully sent to the address entered by the user in Node-RED when a critical condition occurred. |
 | SRS 08                | Achieved. The real-time data from the sensors were displayed on gauges on website. The historical data were displayed on line charts. The LED indicates system status of actuators. |
-| SRS 09                | Not achieved. Data collected by NPK sensor was able to be stored in SD card, however other sensor data is not stored. Data synced with cloud functionality when Wi-Fi was not implemented |
+| SRS 09                | Not achieved. Data collected by NPK sensor and other sensors was able to be stored in SD card. Data synced with cloud functionality when Wi-Fi was not implemented |
 | SRS 10                | Achieved. The fan was activated when motion was detected by motion sensor. The status of the fan is whether on or off is displayed on the Node-RED dashboard. |
 
 ---
